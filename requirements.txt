@@ -1,0 +1,11 @@
+django
+djangorestframework
+pingparsing
+psycopg2
+pysnmp
+python-nmap
+networkx
+matplotlib
+paramiko
+pexpect
+pygal
