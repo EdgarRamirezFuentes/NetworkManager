@@ -6,10 +6,12 @@ COPY ./requirements.txt /tmp/requirements.txt
 COPY ./app /app
 WORKDIR /app
 EXPOSE 8000
+EXPOSE 22
 
 RUN python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
-    apk add --update --no-cache postgresql-client && \
+    apk add --update --no-cache postgresql-client \
+    openssh busybox-extras && \
     apk add --update --virtual .tmp-build-deps \
         build-base postgresql-dev musl-dev && \
     /py/bin/pip install -r /tmp/requirements.txt && \
